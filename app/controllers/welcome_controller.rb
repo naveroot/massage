@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   around_action :switch_locale
+  before_action :set_messages
+
   def index
     @client_ip = request.remote_ip
   end
@@ -13,6 +15,10 @@ class WelcomeController < ApplicationController
 
   def default_url_option
     { locale: I18n.locale }
+  end
+
+  def set_messages
+    @messages = Message.all
   end
 
 
