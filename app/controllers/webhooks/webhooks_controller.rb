@@ -4,8 +4,10 @@ class Webhooks::WebhooksController < Webhooks::BaseController
   skip_before_action :verify_authenticity_token
 
   def callback
-    p params
-    user.messages.new(body: text).save!
+    @bot = Bot.find_by_prefix(params[:other])
+    @message = user.messages.new(body: text)
+    @message.bot = @bot
+    @message.save
     head :ok, content_type: 'text/html'
   end
 

@@ -7,6 +7,6 @@ module ApplicationHelper
     @first_name = @message.user.first_name
     @last_name = @message.user.last_name
     @text = @message.body
-    "[#{@date}] [#{@first_name} #{@last_name}]: #{@text}"
+    "[#{@date}] [#{@first_name} #{@last_name}][#{@message.bot.name}]: #{@text}"
   end
 end
