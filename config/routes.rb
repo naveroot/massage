@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   end
 
   namespace :webhooks do
-    Bot.all&.each do |bot|
-      post "/telegram_#{bot.prefix}" => 'webhooks#callback'
-    end
+    #Bot.all&.each do |bot|
+    #  post "/telegram_#{bot.prefix}" => 'webhooks#callback'
+    #end
     # post '/telegram_dnfsdmfkenjwekfmksdmdfnej' => 'webhooks#callback'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
