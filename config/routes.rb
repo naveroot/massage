@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'welcome/index'
+  root to: 'welcome#index'
   get 'webhooks_controller/callback'
   resources :bots
-  scope '(:locale)', locale: /en|ru/ do
-    get 'welcome/index'
-    root to: 'welcome#index'
-  end
+  #scope '(:locale)', locale: /en|ru/ do
+  #  get 'welcome/index'
+  #  root to: 'welcome#index'
+  #end
 
   namespace :webhooks do
     #Bot.all&.each do |bot|
