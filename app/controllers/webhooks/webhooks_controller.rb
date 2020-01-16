@@ -7,7 +7,7 @@ class Webhooks::WebhooksController < Webhooks::BaseController
     bot = Bot.find_by_prefix(params[:other])
     message = user.messages.new(body: text)
     message.bot = bot
-    message.save
+    message.save!
     head :ok, content_type: 'text/html'
   end
 
