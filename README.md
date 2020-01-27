@@ -1,24 +1,15 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#Bot Agregator
+Приложение должно выполнять функции:
+ - Регистрации новых телеграм ботов
+ - Получение сообщений церез webhook
+ - Сохранение этих сообщений в очередь для последующей отправки
+ - Проверка отправки сообщения стороннему сервису, повторная отправка в случае необходимости
+ - Удаление сообщения после получения
+ 
+ Текущий деплой: https://agile-ocean-36103.herokuapp.com/
+ 
+ ## Что надо добавить
+ - В рамках изучения добавить отображение новых сообщений без обновления страницы(AJAX)
+ - Полдключить Sidekiq + Redis для созданиия джобов под отправку, контроль и тд
+ - Добавить аутентификацию по токену для api и devise для html
+ 
